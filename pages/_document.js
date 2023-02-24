@@ -1,9 +1,11 @@
 import { Html, Head, Main, NextScript } from 'next/document'
+import Script from 'next/script'
 
 export default function Document() {
   return (
     <Html lang="en" className='h-full bg-gray-100 overscroll-none' >
       <Head />
+      <Script src="https://cdn.tailwindcss.com" />
       <body className='h-full'>
         <Main />
         <NextScript />
