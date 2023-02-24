@@ -10,11 +10,10 @@ const Home = props => {
 
 export async function getStaticProps() {
   const graphdl = yaml.parse(fs.readFileSync('graphdl.yaml', 'utf8'))
-  console.log({graphdl})
+  const { _name: name, _seed: seed, _defaultId: defaultId, _constraints: constraints, ...resources } = graphdl
+  console.log({ name, seed, defaultId, constraints, resources })
   return {
-    props: {
-      graphdl
-    }
+    props: { name, seed, defaultId, constraints, resources }
   }
 }
 

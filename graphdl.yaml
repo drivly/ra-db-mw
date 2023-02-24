@@ -1,20 +1,47 @@
-User:
- _id:   email
- _name: ${name} <${email}>
- _icon: 🧑
- name:  string
- email: email
- image: url
- posts: [Post.author]
+_name:        Northwind
+_seed:        https://json.fyi/northwind.json
+_defaultId:   entityId
+_constraints: true
+
+Category:
+ _name: ${categoryName} - ${description}
+
+Customer:
+ _name: companyName
+ _icon: 
  
-Post:
- _id:         slugify(Title)
- _name:       title
- _icon:       📋
- title:       string
- description: string
- tags:        [string]
- content:     markdown
- createdAt:   createdAt()
- createdBy:   createdBy()
- author:      User.Email
+Employee:
+ _name: ${firstname} ${lastname}, ${title}
+
+EmployeeTerritory:
+ _name: territoryCode
+ employeeId: Employee
+ territoryCode: Territory.territoryCode
+ 
+OrderDetail:
+ _name: ${quantity} ${productId->name}
+ orderId:   Order
+ productId: Product
+ 
+Product:
+ _name:      productName
+ categoryId: Category
+ supplierId: Supplier
+ 
+SalesOrder:
+ _name: ${date(orderDate)} - ${count(<-OrderDetail)} Items
+ customerId: Customer
+ employeeId: Employee
+ shipperId:  Shipper
+
+Shipper:
+ _name: companyName
+ 
+Supplier:
+ _name: companyName
+ 
+Region:
+ _name: regiondescription
+ 
+Territory:
+ regionId: Region

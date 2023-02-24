@@ -37,6 +37,14 @@ export default function Layout(props) {
 
   console.log(props)
 
+  // const { name, seed, defaultId, constraints, ...resources } = props
+  const resources = {
+    Posts: {},
+    Comments: {},
+    ToDos: {},
+    Users: {}
+  }
+
   return (
     <>
       <div>
@@ -139,7 +147,27 @@ export default function Layout(props) {
             </div>
             <div className="flex flex-1 flex-col overflow-y-auto">
               <nav className="flex-1 space-y-1 px-2 py-4">
-                {navigation.map((item) => (
+                {Object.entries(resources).map(([name, resource]) => (
+                  <a
+                    key={name}
+                    href={`#/` + name}
+                    // onClick={onMenuClick}
+                    className={classNames(
+                        resource?.current ? 'bg-gray-900 text-white' : 'text-gray-300 hover:bg-gray-700 hover:text-white',
+                      'group flex items-center px-2 py-2 text-base font-medium rounded-md cursor-pointer'
+                    )}
+                  >
+                    <div
+                      className={classNames(
+                        resource?.current ? 'text-gray-300' : 'text-gray-400 group-hover:text-gray-300',
+                        'mr-4 flex-shrink-0 h-6 w-6 '
+                      )}
+                      aria-hidden="true"
+                    />
+                    {name}
+                  </a>
+                ))}
+                {/* {navigation.map((item) => (
                   <a
                     key={item.name}
                     href={item.href}
@@ -157,7 +185,7 @@ export default function Layout(props) {
                     />
                     {item.name}
                   </a>
-                ))}
+                ))} */}
               </nav>
             </div>
           </div>

@@ -6,13 +6,16 @@ import Layout from './Layout'
 
 const dataProvider = jsonServerProvider('https://jsonplaceholder.typicode.com')
 
-const App = () => (
-  <Admin dataProvider={dataProvider} layout={Layout}>
-    <Resource name='posts' list={ListGuesser} />
-    <Resource name='comments' list={ListGuesser} />
-    <Resource name='todos' list={ListGuesser} />
-    <Resource name='users' list={ListGuesser} />
-  </Admin>
-)
+const App = props => {
+  Layout.resources = props.resources
+  return (
+    <Admin dataProvider={dataProvider} layout={Layout}>
+      <Resource name='posts' list={ListGuesser} />
+      <Resource name='comments' list={ListGuesser} />
+      <Resource name='todos' list={ListGuesser} />
+      <Resource name='users' list={ListGuesser} />
+    </Admin>
+  )
+}
 
 export default App
