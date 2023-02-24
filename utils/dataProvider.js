@@ -91,4 +91,11 @@ export default {
             body: JSON.stringify(params.data),
         }).then(({ json }) => ({ data: json }))
     },
+    search: term => {
+        const query = {
+            filter: JSON.stringify({ q: term }),
+        }
+        const url = `${apiUrl}/search?${stringify(query)}`
+        return httpClient(url).then(({ json }) => ({ data: json }))
+    }
 }

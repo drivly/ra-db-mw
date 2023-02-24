@@ -2,8 +2,7 @@ import dynamic from 'next/dynamic'
 import yaml from 'yaml'
 import fs from 'fs'
 
-const App = dynamic(() => import('../components/App'), { ssr: false })
-
+const App = dynamic(() => import('@/components/App'), { ssr: false })
 
 const Home = props => {
   return <App {...props} />
