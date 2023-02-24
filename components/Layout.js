@@ -45,6 +45,8 @@ export default function Layout(props) {
     Users: {}
   }
 
+  const activeResource = window.location.hash.slice(2)
+
   return (
     <>
       <div>
@@ -153,7 +155,7 @@ export default function Layout(props) {
                     href={`#/` + name}
                     // onClick={onMenuClick}
                     className={classNames(
-                        resource?.current ? 'bg-gray-900 text-white' : 'text-gray-300 hover:bg-gray-700 hover:text-white',
+                      activeResource == name ? 'bg-gray-900 text-white' : 'text-gray-300 hover:bg-gray-700 hover:text-white',
                       'group flex items-center px-2 py-2 text-base font-medium rounded-md cursor-pointer'
                     )}
                   >
@@ -276,7 +278,7 @@ export default function Layout(props) {
           <main className="flex-1">
             <div className="py-6">
               <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-                <h1 className="text-2xl font-semibold text-gray-900">Dashboard</h1>
+                <h1 className="text-2xl font-semibold text-gray-900">{activeResource}</h1>
               </div>
               <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
                 {props.children}
