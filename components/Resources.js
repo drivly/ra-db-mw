@@ -1,11 +1,11 @@
-import { Resource, ListGuesser } from 'react-admin'
+import { Resource, ListGuesser, EditGuesser, ShowGuesser } from 'react-admin'
 
 const Resources = () => (
   <>
-    <Resource name="posts" list={ListGuesser} />
-    <Resource name="comments" list={ListGuesser} />
-    <Resource name="todos" list={ListGuesser} />
-    <Resource name="users" list={ListGuesser} />
+    <Resource name="posts" list={ListGuesser} edit={EditGuesser} show={ShowGuesser} />
+    <Resource name="comments" list={ListGuesser} edit={EditGuesser} show={ShowGuesser} />
+    <Resource name="todos" list={ListGuesser} edit={EditGuesser} show={ShowGuesser} />
+    <Resource name="users" list={ListGuesser} edit={EditGuesser} show={ShowGuesser} />
   </>
 )
 
