@@ -12,6 +12,7 @@ import {
   XMarkIcon,
 } from '@heroicons/react/24/outline'
 import { MagnifyingGlassIcon } from '@heroicons/react/20/solid'
+import { ReactQueryDevtools } from 'react-query/devtools'
 
 const defaultNavigation = [
   { name: 'Dashboard', href: '#', icon: HomeIcon, current: true },
@@ -39,6 +40,7 @@ export default function Layout(props) {
 
   // const { name, seed, defaultId, constraints, ...resources } = props
   const resources = {
+    Nouns: {},
     Posts: {},
     Comments: {},
     ToDos: {},
@@ -282,6 +284,7 @@ export default function Layout(props) {
               </div>
               <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 mt-[-3em]">
                 {props.children}
+                {ReactQueryDevtools}
               </div>
             </div>
           </main>
