@@ -1,5 +1,12 @@
 import { fetchUtils } from 'react-admin'
 import { stringify } from 'query-string'
+import jsonServerProvider from 'ra-data-json-server'
+
+// const placeholderResources = ['posts', 'comments', 'todos', 'users']
+// const jsonPlaceholder = jsonServerProvider('https://jsonplaceholder.typicode.com')
+
+// export default (type, resource, params) => placeholderResources.includes(resource) ? 
+//     jsonPlaceholder : dbmwProvider
 
 const apiUrl = 'https://db.mw/'
 const httpClient = fetchUtils.fetchJson

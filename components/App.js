@@ -9,9 +9,9 @@ import { Post, PostList } from './Posts'
 import { CommentList } from './Comments'
 import { TodoList } from './ToDos'
 import { UserList } from './Users'
-// import dataProvider from '@/utils/dataProvider'
+import dataProvider from '@/utils/dataProvider'
 
-const dataProvider = jsonServerProvider('https://jsonplaceholder.typicode.com')
+// const dataProvider = jsonServerProvider('https://jsonplaceholder.typicode.com')
 
 const App = ({resources}) => {
   Layout.resources = resources
