@@ -9,9 +9,9 @@ import { Post, PostList } from './Posts'
 import { CommentList } from './Comments'
 import { TodoList } from './ToDos'
 import { UserList } from './Users'
-import dataProvider from '@/utils/dataProvider'
+// import dataProvider from '@/utils/dataProvider'
 
-// const dataProvider = jsonServerProvider('https://jsonplaceholder.typicode.com')
+const dataProvider = jsonServerProvider('https://jsonplaceholder.typicode.com')
 
 const App = ({resources}) => {
   Layout.resources = resources
@@ -26,13 +26,13 @@ const App = ({resources}) => {
   return (
     <Admin dataProvider={dataProvider} layout={Layout}>
       {/* {resources && Object.entries(resources).map(resource => <Resource name={resource[0]} list={ListGuesser} />)} */}
-      <Resource name="Nouns" hasCreate linkType='show' list={ListGuesser} edit={EditGuesser} show={ShowGuesser} />
       {/* <Resource name="posts" hasCreate linkType='show' list={ListGuesser({linkType: 'show'})} create={DynamicCreate} edit={EditGuesser} show={ShowGuesser} /> */}
       {/* <Post name="posts" /> */}
       <Resource name='posts' recordRepresentation='title' list={PostList} show={ShowGuesser} edit={EditGuesser} />
       <Resource name="comments" recordRepresentation='name' list={CommentList} edit={EditGuesser} show={ShowGuesser} />
       <Resource name="todos" recordRepresentation='title' list={TodoList} edit={EditGuesser} show={ShowGuesser} />
       <Resource name="users" recordRepresentation='name' list={UserList} edit={EditGuesser} show={ShowGuesser} />
+      <Resource name="Nouns" hasCreate linkType='show' list={ListGuesser} edit={EditGuesser} show={ShowGuesser} />
     </Admin>
   )
 }
