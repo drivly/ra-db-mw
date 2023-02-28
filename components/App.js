@@ -32,7 +32,7 @@ const App = ({resources}) => {
       <Resource name="comments" recordRepresentation='name' list={CommentList} edit={EditGuesser} show={ShowGuesser} />
       <Resource name="todos" recordRepresentation='title' list={TodoList} edit={EditGuesser} show={ShowGuesser} />
       <Resource name="users" recordRepresentation='name' list={UserList} edit={EditGuesser} show={ShowGuesser} />
-      <Resource name="Nouns" hasCreate linkType='show' list={ListGuesser} edit={EditGuesser} show={ShowGuesser} />
+      {/* <Resource name="Nouns" hasCreate linkType='show' list={ListGuesser} edit={EditGuesser} show={ShowGuesser} /> */}
     </Admin>
   )
 }
