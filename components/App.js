@@ -4,7 +4,7 @@ import jsonServerProvider from 'ra-data-json-server'
 import { RichTextInput } from 'ra-input-rich-text'
 import Resources from './Resources'
 import Layout from './Layout'
-import Noun from './Noun'
+import Noun from './Nouns'
 import { Post, PostList } from './Posts'
 import { CommentList } from './Comments'
 import { TodoList } from './ToDos'
@@ -30,7 +30,7 @@ const App = ({resources}) => {
       {/* <Resource name="posts" hasCreate linkType='show' list={ListGuesser({linkType: 'show'})} create={DynamicCreate} edit={EditGuesser} show={ShowGuesser} /> */}
       {/* <Post name="posts" /> */}
       <Resource name='posts' recordRepresentation='title' list={PostList} show={ShowGuesser} edit={EditGuesser} />
-      <Resource name="comments" recordRepresentation='body' list={CommentList} edit={EditGuesser} show={ShowGuesser} />
+      <Resource name="comments" recordRepresentation='name' list={CommentList} edit={EditGuesser} show={ShowGuesser} />
       <Resource name="todos" recordRepresentation='title' list={TodoList} edit={EditGuesser} show={ShowGuesser} />
       <Resource name="users" recordRepresentation='name' list={UserList} edit={EditGuesser} show={ShowGuesser} />
     </Admin>
