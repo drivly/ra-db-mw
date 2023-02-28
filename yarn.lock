@@ -364,6 +364,11 @@
   resolved "https://registry.yarnpkg.com/@popperjs/core/-/core-2.11.6.tgz#cee20bd55e68a1720bdab363ecf0c821ded4cd45"
   integrity sha512-50/17A98tWUfQ176raKiOGXuYpLyyVMkxxG6oylzL3BPOlA6ADGdK7EYunSa4I064xerltq9TGXs8HmOk5E+vw==
 
+"@react-admin/ra-search@^4.2.0":
+  version "4.2.0"
+  resolved "https://registry.marmelab.com/download/@react-admin/ra-search/4.2.0/6debc3e34f2a74fe2efe80e4feaeadaa554d8231#6debc3e34f2a74fe2efe80e4feaeadaa554d8231"
+  integrity sha512-O9NuoTbYPodZIzijlxfgXJ/TK1R1eBBs737ScBtRZIH2iWMUR9vzugqkbxM3/y3UrGXH22XfXmWef2T5w1bw/Q==
+
 "@remirror/core-constants@^2.0.0":
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/@remirror/core-constants/-/core-constants-2.0.0.tgz#a52f89059d93955e00810023cc76b4f7db9650bf"

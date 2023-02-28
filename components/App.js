@@ -5,6 +5,10 @@ import { RichTextInput } from 'ra-input-rich-text'
 import Resources from './Resources'
 import Layout from './Layout'
 import Noun from './Noun'
+import { Post, PostList } from './Posts'
+import { CommentList } from './Comments'
+import { TodoList } from './ToDos'
+import { UserList } from './Users'
 // import dataProvider from '@/utils/dataProvider'
 
 const dataProvider = jsonServerProvider('https://jsonplaceholder.typicode.com')
@@ -22,11 +26,13 @@ const App = ({resources}) => {
   return (
     <Admin dataProvider={dataProvider} layout={Layout}>
       {/* {resources && Object.entries(resources).map(resource => <Resource name={resource[0]} list={ListGuesser} />)} */}
-      <Resource name="Nouns" hasCreate list={ListGuesser} edit={EditGuesser} show={ShowGuesser} />
-      <Resource name="posts" hasCreate list={ListGuesser} create={DynamicCreate} edit={EditGuesser} show={ShowGuesser} />
-      <Resource name="comments" list={ListGuesser} edit={EditGuesser} show={ShowGuesser} />
-      {/* <Resource name="todos" list={ListGuesser} edit={EditGuesser} show={ShowGuesser} />
-      <Resource name="users" list={ListGuesser} edit={EditGuesser} show={ShowGuesser} /> */}
+      <Resource name="Nouns" hasCreate linkType='show' list={ListGuesser} edit={EditGuesser} show={ShowGuesser} />
+      {/* <Resource name="posts" hasCreate linkType='show' list={ListGuesser({linkType: 'show'})} create={DynamicCreate} edit={EditGuesser} show={ShowGuesser} /> */}
+      {/* <Post name="posts" /> */}
+      <Resource name='posts' recordRepresentation='title' list={PostList} show={ShowGuesser} edit={EditGuesser} />
+      <Resource name="comments" recordRepresentation='body' list={CommentList} edit={EditGuesser} show={ShowGuesser} />
+      <Resource name="todos" recordRepresentation='title' list={TodoList} edit={EditGuesser} show={ShowGuesser} />
+      <Resource name="users" recordRepresentation='name' list={UserList} edit={EditGuesser} show={ShowGuesser} />
     </Admin>
   )
 }

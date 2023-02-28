@@ -15,6 +15,8 @@ const Noun = (props) =>
     create={Create} 
     edit={Edit} 
     show={Show} 
+    link='show'
+    {...props}
   />
 
 
