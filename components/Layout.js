@@ -40,11 +40,13 @@ export default function Layout(props) {
 
   // const { name, seed, defaultId, constraints, ...resources } = props
   const resources = {
-    Nouns: {},
     Posts: {},
     Comments: {},
     ToDos: {},
-    Users: {}
+    Users: {},
+    Graphs: {},
+    Nouns: {},
+    Verbs: {},
   }
 
   const activeResource = window.location.hash.slice(2)
