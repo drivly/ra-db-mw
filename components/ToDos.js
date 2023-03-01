@@ -1,7 +1,14 @@
-import { BooleanField, Datagrid, List, ReferenceField, Show, SimpleShowLayout, TextField } from 'react-admin'
+import { BooleanField, BooleanInput, Datagrid, List, ReferenceField, ReferenceInput, Show, SimpleShowLayout, TextField, TextInput } from 'react-admin'
+
+
+const todoFilters = [
+  <TextInput label='Search' source='q' />,
+  <BooleanInput source='completed' />,
+  <ReferenceInput source='userId' reference='users' />,
+]
 
 export const TodoList = () => (
-    <List>
+    <List filters={todoFilters}>
         <Datagrid rowClick='show'>
             <ReferenceField source='userId' reference='users' link='show' />
             <TextField source='id' />

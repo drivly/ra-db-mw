@@ -1,7 +1,12 @@
-import { Datagrid, EmailField, List, ReferenceField,  Show, SimpleShowLayout, TextField } from 'react-admin'
+import { Datagrid, EmailField, List, ReferenceField, ReferenceInput, Show, SimpleShowLayout, TextField, TextInput } from 'react-admin'
+
+const commentFilters = [
+  <TextInput label='Search' source='q' />,
+  <ReferenceInput source='postId' reference='posts' />,
+]
 
 export const CommentList = () => (
-    <List>
+    <List filters={commentFilters}>
         <Datagrid rowClick='show'>
             <ReferenceField source='postId' reference='posts' link='show' />
             <TextField source='id' />

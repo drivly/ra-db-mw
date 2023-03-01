@@ -70,7 +70,7 @@ export const UserShow = () => (
             <TextField source='company.name' />
         </SimpleShowLayout> */}
         <SimpleShowLayout>
-          <ReferenceManyField label="Posts" reference="posts" target="author_id">
+          <ReferenceManyField label='Posts' reference='posts' target='author_id'>
             <Datagrid rowClick='show'>
               {/* <ReferenceField source='userId' reference='users' link='show' /> */}
               {/* <TextField source='id' /> */}
@@ -84,14 +84,14 @@ export const UserShow = () => (
 export const UserEdit = () => (
   <Edit>
     <SimpleForm>
-      <TextInput source="id" />
-      <TextInput source="name" />
-      <TextInput source="username" />
-      <TextInput source="email" />
-      <TextInput source="address.street" />
-      <TextInput source="phone" />
-      <TextInput source="website" />
-      <TextInput source="company.name" />
+      <TextInput source='id' />
+      <TextInput source='name' />
+      <TextInput source='username' />
+      <TextInput source='email' />
+      <TextInput source='address.street' />
+      <TextInput source='phone' />
+      <TextInput source='website' />
+      <TextInput source='company.name' />
     </SimpleForm>
   </Edit>
 )
@@ -99,14 +99,14 @@ export const UserEdit = () => (
 export const UserCreate = () => (
   <Create>
     <SimpleForm>
-      <TextInput source="id" />
-      <TextInput source="name" />
-      <TextInput source="username" />
-      <TextInput source="email" />
-      <TextInput source="address.street" />
-      <TextInput source="phone" />
-      <TextInput source="website" />
-      <TextInput source="company.name" />
+      <TextInput source='id' />
+      <TextInput source='name' />
+      <TextInput source='username' />
+      <TextInput source='email' />
+      <TextInput source='address.street' />
+      <TextInput source='phone' />
+      <TextInput source='website' />
+      <TextInput source='company.name' />
     </SimpleForm>
   </Create>
 )
