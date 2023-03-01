@@ -5,10 +5,10 @@ import { RichTextInput } from 'ra-input-rich-text'
 import Resources from './Resources'
 import Layout from './Layout'
 import Noun from './Nouns'
-import { Post, PostList } from './Posts'
+import { Post, PostCreate, PostEdit, PostList, PostShow } from './Posts'
 import { CommentList } from './Comments'
 import { TodoList } from './ToDos'
-import { UserList } from './Users'
+import { UserCreate, UserEdit, UserList, UserShow } from './Users'
 // import dataProvider from '@/utils/dataProvider'
 
 const dataProvider = jsonServerProvider('https://jsonplaceholder.typicode.com')
@@ -28,10 +28,10 @@ const App = ({resources}) => {
       {/* {resources && Object.entries(resources).map(resource => <Resource name={resource[0]} list={ListGuesser} />)} */}
       {/* <Resource name="posts" hasCreate linkType='show' list={ListGuesser({linkType: 'show'})} create={DynamicCreate} edit={EditGuesser} show={ShowGuesser} /> */}
       {/* <Post name="posts" /> */}
-      <Resource name='posts' recordRepresentation='title' list={PostList} show={ShowGuesser} edit={EditGuesser} />
+      <Resource name='posts' recordRepresentation='title' list={PostList} show={PostShow} edit={PostEdit} create={PostCreate} />
       <Resource name="comments" recordRepresentation='name' list={CommentList} edit={EditGuesser} show={ShowGuesser} />
       <Resource name="todos" recordRepresentation='title' list={TodoList} edit={EditGuesser} show={ShowGuesser} />
-      <Resource name="users" recordRepresentation='name' list={UserList} edit={EditGuesser} show={ShowGuesser} />
+      <Resource name="users" recordRepresentation='name' list={UserList} edit={UserEdit} show={UserShow} create={UserCreate} />
       <Resource name="Graphs" hasCreate linkType='show' list={ListGuesser} edit={EditGuesser} show={ShowGuesser} />
       <Resource name="Nouns" hasCreate linkType='show' list={ListGuesser} edit={EditGuesser} show={ShowGuesser} />
       <Resource name="Verbs" hasCreate linkType='show' list={ListGuesser} edit={EditGuesser} show={ShowGuesser} />

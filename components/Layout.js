@@ -49,7 +49,7 @@ export default function Layout(props) {
     Verbs: {},
   }
 
-  const activeResource = window.location.hash.slice(2)
+  const activeResource = window.location.hash.slice(2).split('?')[0].replace('/show','')
 
   return (
     <>
