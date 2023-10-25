@@ -12,7 +12,7 @@
     "@headlessui/react": "^1.7.11",
     "@heroicons/react": "^2.0.16",
     "@tailwindcss/forms": "^0.5.3",
-    "next": "13.2.1",
+    "next": "13.5.0",
     "ra-data-json-server": "^4.8.1",
     "ra-input-rich-text": "^4.8.1",
     "react": "18.2.0",
